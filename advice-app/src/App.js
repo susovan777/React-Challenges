@@ -5,6 +5,7 @@ function App() {
   const [fetchData, setFetchData] = useState([]);
   const [advice, setAdvice] = useState("");
   const [count, setCount] = useState(0);
+  const [isStart, setIsStart] = useState(false);
 
   /* 
   async function getAdvice() {
@@ -29,6 +30,7 @@ function App() {
   };
 
   const getAdvice = () => {
+    setIsStart(true);
     fetchAdvice(); // when the button clicked get a new advice
     setAdvice(fetchData.slip.advice);
     setCount((count) => count + 1);
@@ -38,12 +40,17 @@ function App() {
     fetchAdvice();
   }, []);
 
-
   return (
     <div className="App">
       <h1>Hello World!</h1>
-      <h2>{advice}</h2>
-      <button onClick={getAdvice}>Get Advice</button>
+      {isStart && (
+        <div className="card">
+          <h2>{advice}</h2>
+        </div>
+      )}
+      <button className="btn-grad" onClick={getAdvice}>
+        Get Advice
+      </button>
       <p>
         You have read <strong>{count}</strong> pieces of advice.
       </p>
