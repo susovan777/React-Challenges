@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
 const Counter = () => {
-  const today = new Date().toDateString();
   const [step, setStep] = useState(1);
   const [count, setCount] = useState(0);
-  const [date, setDate] = useState(today);
+
+  const date = new Date();
+  date.setDate(date.getDate() + count); // 💎 learned about setDate() method
 
   const increaseStep = () => {
     setStep((prev) => prev + 1);
@@ -18,9 +19,11 @@ const Counter = () => {
   const decreaseCount = () => {
     setCount((prev) => prev - step);
   };
+
   //   console.log(today);
   return (
     <>
+      <h1>Date Counter</h1>
       <div>
         <button onClick={decreaseStep}>-</button>
         <span>Step: {step}</span>
@@ -31,13 +34,15 @@ const Counter = () => {
         <span>Count: {count}</span>
         <button onClick={increaseCount}>+</button>
       </div>
-      {count ? (
-        <p>
-          {count} days from today is {date}
-        </p>
-      ) : (
-        <p>Today is {date}</p>
-      )}
+
+      <p>
+        {!count
+          ? "Today is "
+          : count < 1
+          ? `${count} days ago was `
+          : `${count} days from today is `}{" "}
+        <strong>{date.toDateString()}</strong>
+      </p>
     </>
   );
 };
