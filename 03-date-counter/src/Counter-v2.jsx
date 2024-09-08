@@ -7,13 +7,10 @@ const CounterV2 = () => {
   const date = new Date();
   date.setDate(date.getDate() + count); // 💎 learned about setDate() method
 
-  //   const increaseStep = () => {
-  //     setStep((prev) => prev + 1);
-  //   };
-  //   const decreaseStep = () => {
-  //     if (step >= 2) setStep((prev) => prev - 1);
-  //   };
-
+  const handleReset = () => {
+    setRange(1);
+    setCount(0);
+  };
   const increaseCount = () => {
     setCount((prev) => prev + range);
   };
@@ -48,6 +45,12 @@ const CounterV2 = () => {
           : `${count} days from today is `}{" "}
         <strong>{date.toDateString()}</strong>
       </p>
+
+      {range !== 1 || count !== 0 ? (
+        <div>
+          <button onClick={handleReset}>Reset</button>
+        </div>
+      ) : null}
     </>
   );
 };
