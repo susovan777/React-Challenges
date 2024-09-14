@@ -16,18 +16,38 @@ body {
 }
 
 .item {
-  width: 70%;
+  width: 40%;
   padding: 0 2rem;
   font-size: 0.8rem;
   cursor: pointer;
+  border-top: 4px solid #fff;
   box-shadow: 0 0px 20px 0 #00000026;
+  text-align: left;
 
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
+  column-gap: 2rem;
+  row-gap: 1rem;
+}
+
+.active {
+  border-top: 4px solid #087f5b;
+}
+
+.active h1 {
+  color: #087f5b;
+}
+
+.number {
+  color: #ced4da;
 }
 
 span {
   font-size: 1.7rem;
-  margin-right: 10px;
+}
+
+.content {
+  grid-column: 2 / -1;
+  padding-bottom: 1rem;
 }
