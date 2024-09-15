@@ -4,6 +4,7 @@ import faqs from "./Faq-Data";
 const Accordion = () => {
   return (
     <div className="accordion">
+      <h2>V1</h2>
       {faqs.map((el, i) => {
         return (
           <AccordionItem
@@ -11,8 +12,6 @@ const Accordion = () => {
             point={i + 1}
             title={el.title}
             description={el.text}
-            // isExpand={isExpand}
-            // clickEvent={expandItem}
           />
         );
       })}

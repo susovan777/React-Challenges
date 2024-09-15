@@ -7,18 +7,29 @@ body {
   color: #343a40;
 }
 
+.App {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  /* gap: 10px; */
+  /* align-items: center; */
+}
+
 .accordion {
-  margin: 5rem auto;
+  /* margin: 5rem auto; */
+  width: 50%;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  box-shadow: 0 0px 20px 0 #00000026;
 }
 
 .item {
-  width: 40%;
+  width: 80%;
   padding: 0 2rem;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   cursor: pointer;
   border-top: 4px solid #fff;
   box-shadow: 0 0px 20px 0 #00000026;
@@ -48,6 +59,8 @@ span {
 }
 
 .content {
-  grid-column: 2 / -1;
+  margin-top: 0px;
+  grid-column: 2 / -1; /* grid-column-start / grid-column-end**/
   padding-bottom: 1rem;
+  font-size: 1rem;
 }
