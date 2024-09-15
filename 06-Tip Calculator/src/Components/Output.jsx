@@ -3,7 +3,10 @@ const Output = ({ billAmount, myFeedback, friendFeedback }) => {
   const friendTip = (billAmount * Number(friendFeedback)) / 100;
   return (
     <h2>
-      You pay ₹{billAmount + myTip + friendTip} (₹{billAmount} + ₹{myTip + friendTip} tip)
+      You pay ₹{billAmount + myTip + friendTip}{" "}
+      <span>
+        (₹{billAmount} + ₹{myTip + friendTip} tip)
+      </span>
     </h2>
   );
 };

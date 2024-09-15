@@ -1,6 +1,6 @@
 const Service = ({ children, serviceName, servicePercent, setServicePercent }) => {
   return (
-    <div>
+    <div className="item">
       {children}{" "}
       <select name={serviceName} value={servicePercent} onChange={setServicePercent}>
         <option value="0">Dissatisfied (0%)</option>

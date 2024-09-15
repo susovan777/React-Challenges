@@ -32,33 +32,35 @@ export default function App() {
   };
 
   return (
-    <div>
+    <div className="App">
       <h1>💰Tip Calculator</h1>
-      <Bill billAmount={billAmount} setBillAmount={handleBillInput} />
-      <Service
-        serviceName="myFeedback"
-        servicePercent={service.myFeedback}
-        setServicePercent={handleService}
-      >
-        How did you like the service?
-      </Service>
-      <Service
-        serviceName="friendFeedback"
-        servicePercent={service.friendFeedback}
-        setServicePercent={handleService}
-      >
-        How did your friend like the service?
-      </Service>
-      {billAmount && (
-        <>
-          <Output
-            billAmount={billAmount}
-            myFeedback={service.myFeedback}
-            friendFeedback={service.friendFeedback}
-          />
-          <button onClick={handleReset}>Reset</button>
-        </>
-      )}
+      <div className="calculator">
+        <Bill billAmount={billAmount} setBillAmount={handleBillInput} />
+        <Service
+          serviceName="myFeedback"
+          servicePercent={service.myFeedback}
+          setServicePercent={handleService}
+        >
+          How did you like the service?
+        </Service>
+        <Service
+          serviceName="friendFeedback"
+          servicePercent={service.friendFeedback}
+          setServicePercent={handleService}
+        >
+          How did your friend like the service?
+        </Service>
+        {billAmount && (
+          <>
+            <Output
+              billAmount={billAmount}
+              myFeedback={service.myFeedback}
+              friendFeedback={service.friendFeedback}
+            />
+            <button onClick={handleReset}>Reset</button>
+          </>
+        )}
+      </div>
     </div>
   );
 }

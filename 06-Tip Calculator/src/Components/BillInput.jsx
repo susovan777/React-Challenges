@@ -1,6 +1,6 @@
 const Bill = ({ billAmount, setBillAmount }) => {
   return (
-    <div>
+    <div className="item">
       How much was the bill?{" "}
       <input
         type="text"
