@@ -1,0 +1,10 @@
+.on {
+  color: #000;
+}
+.off {
+  color: #ccc;
+}
+
+span {
+  cursor: pointer;
+}

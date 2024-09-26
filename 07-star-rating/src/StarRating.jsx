@@ -2,10 +2,10 @@ import { useState } from "react";
 
 const containerStyle = {
   display: "flex",
+  justifyContent: "center",
   alignItems: "center",
   gap: "20px",
-  margin: "5rem auto",
-  width: "70%",
+  margin: "5rem",
 };
 
 const startContainerStyle = {
