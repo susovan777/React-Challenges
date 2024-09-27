@@ -17,7 +17,7 @@ export default function StarRate({ max = 5 }) {
   return (
     <div style={starContainer}>
       <div>
-        {[...Array(max)].map((star, i) => {
+        {[...Array(max)].map((_, i) => {
           return (
             <Star
               key={i}
