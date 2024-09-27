@@ -6,7 +6,16 @@ function App() {
   return (
     <>
       <h1>Star Rating</h1>
-      <StarRating count={10} />
+      <StarRating
+        count={5}
+        message={["Terrible", "Okay", "Good", "Nice", "Amazing"]}
+      />
+      <StarRating
+        count={10}
+        color="blue"
+        fontSize={20}
+        message={["Terrible", "Okay", "Good", "Nice", "Amazing"]}
+      />
       <hr />
       <StarRate max={10} />
     </>
