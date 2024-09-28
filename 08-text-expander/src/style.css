@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+}
+
+.app {
+  margin: 3rem;
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+
+.box {
+  border: 1px solid #dbd5d5;
+  margin: 3rem 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #f3f3f3;
+}
