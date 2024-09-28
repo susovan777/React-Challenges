@@ -7,7 +7,7 @@ function App() {
     <>
       <h1>Star Rating</h1>
       <StarRating
-        count={5}
+        maxRating={5}
         message={["Terrible", "Okay", "Good", "Nice", "Amazing"]}
       />
       <StarRating
