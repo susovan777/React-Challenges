@@ -1,6 +1,10 @@
+import TabContainer from "./Components/TabContainer";
+
 const App = () => {
-  return <div>
-    Hello
-  </div>
-}
-export default App
+  return (
+    <div>
+      <TabContainer />
+    </div>
+  );
+};
+export default App;
