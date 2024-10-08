@@ -1,13 +1,8 @@
-const TabContent = () => {
+const TabContent = ({ item }) => {
   return (
     <div className="tab-content">
-      <h4>Card Title</h4>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi beatae
-        repellat enim labore aliquid aspernatur minus voluptate! Libero quia
-        neque exercitationem eligendi? Ratione harum aperiam laborum odio
-        voluptatum, atque dolores?
-      </p>
+      <h4>{item.summary}</h4>
+      <p>{item.details}</p>
 
       <div className="tab-actions">
         <button>Show Details</button>
@@ -27,4 +22,13 @@ const TabContent = () => {
   );
 };
 
+const DifferentContent = () => {
+  return (
+    <div className="tab-content">
+      <h4>I'm a DIFFERENT tab, so I reset state 💣💥</h4>
+    </div>
+  );
+};
+
 export default TabContent;
+export { DifferentContent };
