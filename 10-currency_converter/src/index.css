@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 2rem;
+  font-size: 1.3rem;
+}
+
+input,
+select {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  padding: 0.3rem 0.6rem;
+}
