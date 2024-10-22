@@ -1,41 +1,27 @@
 import { useState } from "react";
+import { useGeolocate } from "./useGeolocate";
 const App = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [location, setLocation] = useState(null);
-  const [error, setError] = useState(null);
   const [count, setCount] = useState(0);
 
-  const handleClick = () => {
-    setIsLoading(true);
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(success, error);
-    }
+  const { isLoading, location, getPosition, error } = useGeolocate();
 
-    function success(position) {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-      setLocation({ latitude, longitude });
-      setIsLoading(false);
-      setCount((prev) => prev + 1);
-      console.log(latitude, longitude);
-    }
-    
-    function error() {
-      setIsLoading(false);
-      console.log("Unable to retrieve your location");
-    }
+  const handleClick = () => {
+    setCount((prev) => prev + 1);
+    getPosition();
   };
-  // console.log(location.latitude);
+
   return (
     <>
-      <button onClick={handleClick}>Get my position</button>
+      <button onClick={handleClick} disabled={isLoading}>
+        Get my position
+      </button>
       {isLoading && <p>Fetching location...</p>}
+      {error && <p>{error}</p>}
       {location && (
         <p>
           Your GPS position: {location.latitude}, {location.longitude}
         </p>
       )}
-      {/* {success && <p>User denied</p>} */}
 
       <p>You requested position {count} times</p>
     </>
