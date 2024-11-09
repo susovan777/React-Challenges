@@ -22,8 +22,25 @@ const reducer = (state, action) => {
       };
 
     case "withdraw":
+      return {
+        ...state,
+        balance: state.balance - action.amount,
+      };
+
     case "requestLoan":
+      return {
+        ...state,
+        balance: state.loan > 0 ? state.balance : state.balance + action.amount,
+        loan: state.loan > 0 ? state.loan : action.amount,
+      };
+
     case "payLoan":
+      return {
+        ...state,
+        balance: state.balance - action.amount,
+        loan: state.loan - action.amount,
+      };
+
     case "closeAccount":
       return {
         ...initialState,
@@ -44,15 +61,18 @@ const App = () => {
     dispatch({ type: "deposite", amount: 150 });
   };
   const handleWithdraw = () => {
-    dispatch({ type: "withdraw" });
+    dispatch({ type: "withdraw", amount: 50 });
   };
   const handleRequestLoan = () => {
-    dispatch({ type: "requestLoan" });
+    dispatch({ type: "requestLoan", amount: 5000 });
   };
   const handlePayLoan = () => {
-    dispatch({ type: "payLoan" });
+    dispatch({ type: "payLoan", amount: state.loan });
   };
   const handleCloseAccount = () => {
+    if (state.loan > 0) return;
+    if (state.balance !== 0) return;
+
     dispatch({ type: "closeAccount" });
   };
 
