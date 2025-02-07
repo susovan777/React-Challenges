@@ -6,9 +6,12 @@ const Table = ({ data }) => {
       <thead>
         <tr>
           <th>Id</th>
-          <th>ToDo</th>
-          <th>Completed</th>
-          <th>UserId</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Sold</th>
+          <th>Image</th>
         </tr>
       </thead>
       <tbody>

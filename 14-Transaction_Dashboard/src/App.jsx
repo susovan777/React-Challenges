@@ -14,27 +14,30 @@ const App = () => {
 
   const BASE_URL =
     "https://s3.amazonaws.com/roxiler.com/product_transaction.json";
-  const BASE_URL1 = "https://dummyjson.com/todos";
+  // const BASE_URL1 = "https://dummyjson.com/todos";
+
+  const fetchedData = async () => {
+    try {
+      const response = await fetch(BASE_URL, {
+        mode: "no-cors",
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const actualData = await response.json();
+      console.log(actualData);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchedData = async () => {
-      try {
-        const response = await fetch(BASE_URL, {
-          mode: "no-cors",
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        const actualData = await response.json();
-        // setData(actualData.todos);
-        console.log(actualData);
-      } catch (e) {
-        console.error(e);
-      }
-    };
     fetchedData();
   }, []);
+
+  // console.log(data);
 
   return (
     <div>
