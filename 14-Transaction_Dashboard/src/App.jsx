@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./app.css";
 import Table from "./Components/Table";
 import Pagination from "./Components/Pagination";
+import Header from "./Components/Header";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -19,9 +19,15 @@ const App = () => {
   useEffect(() => {
     const fetchedData = async () => {
       try {
-        const response = await fetch(BASE_URL1);
+        const response = await fetch(BASE_URL, {
+          mode: "no-cors",
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
         const actualData = await response.json();
-        setData(actualData.todos);
+        // setData(actualData.todos);
         console.log(actualData);
       } catch (e) {
         console.error(e);
@@ -32,6 +38,7 @@ const App = () => {
 
   return (
     <div>
+      <Header />
       <Table data={currentItems} />
       <Pagination
         totalItems={data.length}
