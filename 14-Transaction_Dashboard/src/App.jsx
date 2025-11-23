@@ -25,8 +25,12 @@ const App = () => {
           "Content-Type": "application/json",
         },
       });
+      // .then((res) => res.json())
+      // .then((data) => {
+      //   console.log(data);
+      // });
 
-      const actualData = await response.json();
+      const actualData = await response.json()
       console.log(actualData);
     } catch (error) {
       console.error("Error fetching data:", error);
